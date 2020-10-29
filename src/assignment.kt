@@ -25,7 +25,7 @@ class Point {
 
     }
     fun symethry() {
-        y = -y
+        x = -x
         return println("symethrical towards y axis is (${x},${y})")
 
     }

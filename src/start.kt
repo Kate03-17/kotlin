@@ -24,12 +24,15 @@ fun main() {
 
 
     val f1 = Fraction()
-    f1.numerator = 3f
-    f1.denominator = 4f
+    f1.numerator = 4f
+    f1.denominator = 16f
 
     val f2 = Fraction()
     f2.numerator = 2f
     f2.denominator = 5f
+
+    f1.simplifying()
+    println(f1)
     
 
 
@@ -89,16 +92,17 @@ class Fraction {
             }
             return maxD.toFloat()
         }
+        val max = maxD()
 
-        numerator = numerator / maxD()
-        denominator = denominator / maxD()
-        return numerator.toFloat(); denominator.toFloat()
+        numerator = numerator / max
+        denominator = denominator / max
+        return numerator; denominator
 
 
     }
     fun multiplication(other: Fraction): Fraction {
-        var y = denominator * other.denominator
-        var x = numerator * other.numerator
+        val y = denominator * other.denominator
+        val x = numerator * other.numerator
         val f3 = Fraction()
         f3.numerator = x
         f3.denominator = y
